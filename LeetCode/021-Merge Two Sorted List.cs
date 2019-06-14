@@ -4,16 +4,6 @@ using System.Text;
 
 namespace LeetCode
 {
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x)
-        {
-            val = x;
-        }
-    }
-
     public class Solution021
     {
         public ListNode MergeTwoLists(ListNode l1, ListNode l2)
