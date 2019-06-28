@@ -12,7 +12,9 @@ namespace LeetCode
             Array.Reverse(bits);
 
             uint u = Convert.ToUInt32(new String(bits), 2);
-
+            //string ss = Convert.ToString(n, 2);
+            //string s = Convert.ToString(~n, 2);
+            //uint u = ~n;
 
             return u;
 
