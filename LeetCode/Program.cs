@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCode
 {
@@ -6,13 +7,13 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
+            Stack<int> s = new Stack<int>();
+            s.Push(1);
+            s.Push(12);
+            s.Push(13);
 
-            int i = -123;
-            string s = i.ToString();
-            char[] c = s.ToCharArray();
-            Array.Reverse(c);
 
-            Console.WriteLine(c);
+            Console.WriteLine(s);
 
 
 
