@@ -9,7 +9,7 @@ namespace LeetCodeUnitTest
     public class Solution448Test
     {
         [Fact]
-        public void ArrangeCoins()
+        public void FindDisappearedNumbers()
         {
             int[] nums = new int[] { 4, 3, 2, 7, 8, 2, 3, 1 };
             IList<int> expected = new List<int>() { 5, 6 };
