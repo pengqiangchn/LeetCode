@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,50 +9,36 @@ namespace LeetCode
     {
         public string[] FindRelativeRanks(int[] nums)
         {
+            Dictionary<int, string> dic = new Dictionary<int, string>();
+            List<int> numsList = new List<int>(nums);
+            numsList.Sort();
+            numsList.Reverse();
+
             List<string> list = new List<string>();
 
-            //Array.Sort(nums);
-
-            //int count = 1;
-            //for (int i = nums.Length - 1; i >= 0; i++)
-            //{
-            //    if (count == 1)
-            //    {
-            //        list.Add("Gold Medal");
-            //    }
-            //    else if (count == 2)
-            //    {
-            //        list.Add("Silver Medal");
-            //    }
-            //    else if (count == 3)
-            //    {
-            //        list.Add("Bronze Medal");
-            //    }
-            //    else
-            //    {
-            //        list.Add(count.ToString());
-            //    }
-            //    count++;
-            //}
-
-            if (nums.Length == 0)
-                return new string[] { };
-
-            if (nums.Length == 1)
+            for (int i = 0; i < numsList.Count; i++)
             {
-                return new string[] { "Gold Medal" };
+                if (i == 0)
+                {
+                    dic[numsList[i]] = "Gold Medal";
+                }
+                else if (i == 1)
+                {
+                    dic[numsList[i]] = "Silver Medal";
+                }
+                else if (i == 2)
+                {
+                    dic[numsList[i]] = "Bronze Medal";
+                }
+                else
+                {
+                    dic[numsList[i]] = (i + 1).ToString();
+                }
             }
 
-            if (nums.Length == 2)
+            foreach (var num in nums)
             {
-                return new string[] { "Gold Medal", "Silver Medal" };
-            }
-
-            list = new List<string>() { "Gold Medal", "Silver Medal", "Bronze Medal" };
-
-            for (int i = 3; i < nums.Length; i++)
-            {
-                list.Add((i + 1).ToString());
+                list.Add(dic[num]);
             }
 
             return list.ToArray();
